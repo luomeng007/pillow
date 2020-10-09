@@ -6,6 +6,7 @@ Created on Fri Aug 28 08:55:14 2020
 
 Text nesting of holiday wishes , two-level nesting.
 """
+
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
@@ -25,6 +26,7 @@ class newYear:
         self.component1 = None
         self.component2 = None
     
+    
     def imageDraw(self, word):
         image1 = Image.new("RGB", (self.word_size, self.word_size), "white").convert("L")
 
@@ -33,6 +35,7 @@ class newYear:
         work_bench.text(xy=(0, 0), text=u'{}'.format(word), fill="#000000", font=ImageFont.truetype('C:/Windows/Fonts/simsun.ttc', self.word_size))
 
         return image1                         
+    
     
     def createComponent(self, image1, image2):
         bench_size = (pow(self.word_size, 2), pow(self.word_size, 2))
@@ -43,6 +46,7 @@ class newYear:
                     new_bench.paste(image2, (w * image2.width, h * image2.height))
         
         return new_bench
+        
         
     def mergeComponent(self):
         bench_size = (1300, 800)
@@ -65,7 +69,6 @@ class newYear:
         
         self.mergeComponent()
         
-
 
 class wordBlessing:
     unit_dict = {
